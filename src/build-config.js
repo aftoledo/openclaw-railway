@@ -375,7 +375,7 @@ function buildConfig() {
   }
 
   // --- Gateway ---
-  config.gateway.bind = 'loopback';
+  config.gateway.bind = process.env.GATEWAY_BIND || '0.0.0.0';
   config.gateway.auth = config.gateway.auth || {};
 
   config.gateway.auth.mode = 'token';
